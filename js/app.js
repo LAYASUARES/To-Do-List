@@ -68,7 +68,7 @@ function addToDo(toDo, id, done, trash){
 
 //Colocar um item a lista qdo o usuario clicar no enter
 document.addEventListener("keyup",function(event){
-   if(event.key === "Enter"){
+   if(event.keyCode === "Enter"){
         const toDo = input.value;
 
         //Se o input não estiver vazio
