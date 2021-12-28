@@ -58,7 +58,7 @@ function addToDo(toDo, id, done, trash){
                     
     <i class="fa ${DONE} co" job="complete" id="${id}"></i>
     <p class="text ${LINE}">${toDo}</p>
-    <i class="fa fa-trash-o de" job=" delete" id="${id}"></i>
+    <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
 
   </li>`;
     const position = "beforeend";             
@@ -67,8 +67,8 @@ function addToDo(toDo, id, done, trash){
 }
 
 //Colocar um item a lista qdo o usuario clicar no enter
-document.addEventListener("keyup",function(even){
-    if(event.keyCode == 13){
+document.addEventListener("keyup",function(event){
+   if(event.key === "Enter"){
         const toDo = input.value;
 
         //Se o input não estiver vazio
@@ -114,9 +114,9 @@ list.addEventListener("click", function(event){
     const element = event.target; //retorna o elemento cliclado dentro da lista
     const elementJob = element.attributes.Job.value; // Completa ou deleta
 
-    if(elementJob == "complete"){
+    if(elementJob === "complete"){
         completeToDo(element);
-    }else if(elementJob == "remove"){
+    }else if(elementJob === "delete"){
         removeToDo(element);
     }
 
