@@ -67,8 +67,8 @@ function addToDo(toDo, id, done, trash){
 }
 
 //Colocar um item a lista qdo o usuario clicar no enter
-document.addEventListener("keyup",function(event){
-   if(event.keyCode === "Enter"){
+document.addEventListener("keyup",function(even){
+    if(event.keyCode == 13){
         const toDo = input.value;
 
         //Se o input não estiver vazio
@@ -114,9 +114,9 @@ list.addEventListener("click", function(event){
     const element = event.target; //retorna o elemento cliclado dentro da lista
     const elementJob = element.attributes.Job.value; // Completa ou deleta
 
-    if(elementJob === "complete"){
+    if(elementJob == "complete"){
         completeToDo(element);
-    }else if(elementJob === "delete"){
+    }else if(elementJob == "delete"){
         removeToDo(element);
     }
 
